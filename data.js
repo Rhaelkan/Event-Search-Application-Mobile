@@ -25,6 +25,12 @@ const buyuksehirler = [
     'Muğla',
   ];
 
+  export const slaytresimleri = [
+    'https://img.freepik.com/free-vector/open-air-concert-illustration_23-2148663401.jpg?w=1380&t=st=1693835711~exp=1693836311~hmac=637f81655c116dd8f611fe117089431e5355099b84e855a1a67ecbeddb4a2276',
+    'https://img.freepik.com/free-vector/open-air-concert-illustration_23-2148663401.jpg?w=1380&t=st=1693835711~exp=1693836311~hmac=637f81655c116dd8f611fe117089431e5355099b84e855a1a67ecbeddb4a2276',
+    'https://img.freepik.com/free-vector/open-air-concert-illustration_23-2148663401.jpg?w=1380&t=st=1693835711~exp=1693836311~hmac=637f81655c116dd8f611fe117089431e5355099b84e855a1a67ecbeddb4a2276'
+  ]
+
 const etkinlikler = [
   {
     id: 1,
