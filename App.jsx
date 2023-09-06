@@ -20,6 +20,7 @@ const App = ({navigation}) => {
     item =>
       item.isim.toLowerCase().includes(searchText.toLowerCase()) ||
       item.tur.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.mekan.ad.toLowerCase().includes(searchText.toLowerCase()) ||
       item.mekan.adres.toLowerCase().includes(searchText.toLowerCase()),
   );
 
@@ -40,14 +41,14 @@ const App = ({navigation}) => {
             flex: 1,
             fontWeight: '500',
             fontSize: 16,
-            letterSpacing: 0.4,
+            color: '#61BAAD'
           }}
           placeholder="Eventify'da Ara"
-          placeholderTextColor="#85929E"
+          placeholderTextColor="#61BAAD"
           value={searchText}
           onChangeText={text => setSearchText(text)}></TextInput>
         <View>
-          <Icon name="search" size={30} />
+          <Icon name="search" size={30} style={{ color: '#61BAAD' }} />
         </View>
       </View>
 
@@ -88,7 +89,7 @@ const App = ({navigation}) => {
           minHeight: '100%',
         }}>
         <FlatList
-        contentContainerStyle={{ marginTop: 10 }}
+        contentContainerStyle={{ marginTop: 10, paddingBottom: 320 }}
           showsVerticalScrollIndicator={false}
           data={filteredEtkinlikler}
           ListHeaderComponent={() => (
@@ -127,6 +128,7 @@ const App = ({navigation}) => {
           renderItem={({item}) => (
             <EventCard
               onPress={() => navigation.navigate('EventDetail', {event: item})}
+              onCategoryPress={() => navigation.navigate('CategoryPage', {event: item})}
               isim={item.isim}
               tur={item.tur}
               tarih={item.tarih}

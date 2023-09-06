@@ -1,19 +1,16 @@
 import {
   View,
   Text,
-  SafeAreaView,
-  FlatList,
-  TextInput,
   Image,
-  Touchable,
   TouchableOpacity,
   Pressable,
 } from 'react-native';
 import React from 'react';
-import Icon from "react-native-vector-icons/MaterialIcons"
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function EventCard({
   onPress,
+  onCategoryPress,
   isim,
   tarih,
   tur,
@@ -55,9 +52,11 @@ export default function EventCard({
           paddingVertical: 2,
           margin: 5,
         }}>
-        <Text style={{color: 'white', fontSize: 10, fontWeight: 800}}>
-          {tur}
-        </Text>
+        <TouchableOpacity onPress={onCategoryPress}>
+          <Text style={{color: 'white', fontSize: 10, fontWeight: 800}}>
+            {tur}
+          </Text>
+        </TouchableOpacity>
       </View>
       <View
         style={{
@@ -87,14 +86,18 @@ export default function EventCard({
               gap: 5,
               justifyContent: 'space-between',
             }}>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Icon name="attach-money" size={16} style={{color: '#61BAAD'}} />
-              <Text style={{color: '#61BAAD', fontWeight: 600}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginLeft: 5,
+              }}>
+              <Text style={{fontSize: 16, color: '#61BAAD'}}>₺</Text>
+              <Text style={{color: '#61BAAD', fontWeight: 600, marginLeft: 8}}>
                 {fiyat > 0 ? fiyat : 'Ücretsiz'}
               </Text>
             </View>
-            <TouchableOpacity
-              onPress={onPress}>
+            <TouchableOpacity onPress={onPress}>
               <Icon
                 name="keyboard-double-arrow-right"
                 size={18}
