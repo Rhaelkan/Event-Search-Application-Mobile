@@ -10,7 +10,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function EventCard({
   onPress,
-  onCategoryPress,
   isim,
   tarih,
   tur,
@@ -36,7 +35,7 @@ export default function EventCard({
           uri: `${resimler}`,
         }}
         style={{
-          height: 100,
+          height: '100%',
           borderTopLeftRadius: 10,
           borderBottomLeftRadius: 10,
           width: '30%',
@@ -52,11 +51,11 @@ export default function EventCard({
           paddingVertical: 2,
           margin: 5,
         }}>
-        <TouchableOpacity onPress={onCategoryPress}>
+        <View>
           <Text style={{color: 'white', fontSize: 10, fontWeight: 800}}>
             {tur}
           </Text>
-        </TouchableOpacity>
+        </View>
       </View>
       <View
         style={{

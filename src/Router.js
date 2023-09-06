@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import App from '../App';
 import EventDetail from './pages/EventDetail';
-import CategoryPage from './pages/CategoryPage';
+import SelectedPlaces from './pages/SelectedPlaces';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ function Router() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={App} />
         <Stack.Screen name="EventDetail" component={EventDetail} />
-        <Stack.Screen name="CategoryPage" component={CategoryPage} />
+        <Stack.Screen name="SelectedPlaces" component={SelectedPlaces} />
       </Stack.Navigator>
     </NavigationContainer>
   );

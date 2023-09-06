@@ -10,7 +10,7 @@ import {
   Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
-import etkinlikler, {slaytresimleri,} from './data';
+import etkinlikler, {konserresimleri} from './data';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import EventCard from './src/components/EventCard';
 
@@ -41,14 +41,14 @@ const App = ({navigation}) => {
             flex: 1,
             fontWeight: '500',
             fontSize: 16,
-            color: '#61BAAD'
+            color: '#61BAAD',
           }}
           placeholder="Eventify'da Ara"
           placeholderTextColor="#61BAAD"
           value={searchText}
           onChangeText={text => setSearchText(text)}></TextInput>
         <View>
-          <Icon name="search" size={30} style={{ color: '#61BAAD' }} />
+          <Icon name="search" size={30} style={{color: '#61BAAD'}} />
         </View>
       </View>
 
@@ -63,19 +63,21 @@ const App = ({navigation}) => {
           Popüler Etkinlikler
         </Text>
         <FlatList
-          data={slaytresimleri}
+          data={etkinlikler}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
+            <Pressable onPress={() => navigation.navigate('EventDetail', {event: item})}>
             <Image
-              source={{uri: item}}
+              source={{uri: `${item.resimler}`}}
               style={{
-                width: 250,
+                width: 150,
                 height: 150,
                 marginRight: 20,
                 borderRadius: 10,
               }}
             />
+            </Pressable>
           )}
         />
       </View>
@@ -89,12 +91,18 @@ const App = ({navigation}) => {
           minHeight: '100%',
         }}>
         <FlatList
-        contentContainerStyle={{ marginTop: 10, paddingBottom: 320 }}
+          contentContainerStyle={{marginTop: 10, paddingBottom: 320}}
           showsVerticalScrollIndicator={false}
           data={filteredEtkinlikler}
           ListHeaderComponent={() => (
             <View style={{padding: 5}}>
-              <Text style={{color: '#FF006C', fontWeight: '900', fontSize: 28, marginBottom: 10}}>
+              <Text
+                style={{
+                  color: '#FF006C',
+                  fontWeight: '900',
+                  fontSize: 28,
+                  marginBottom: 10,
+                }}>
                 Tüm Etkinlikler
               </Text>
             </View>
@@ -128,7 +136,6 @@ const App = ({navigation}) => {
           renderItem={({item}) => (
             <EventCard
               onPress={() => navigation.navigate('EventDetail', {event: item})}
-              onCategoryPress={() => navigation.navigate('CategoryPage', {event: item})}
               isim={item.isim}
               tur={item.tur}
               tarih={item.tarih}
