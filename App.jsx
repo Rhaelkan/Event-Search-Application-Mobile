@@ -10,9 +10,10 @@ import {
   Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
-import etkinlikler, {konserresimleri} from './data';
+import etkinlikler from './data';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import EventCard from './src/components/EventCard';
+import {populeretkinlikler} from './data';
 
 const App = ({navigation}) => {
   const [searchText, setSearchText] = useState('');
@@ -63,20 +64,21 @@ const App = ({navigation}) => {
           Popüler Etkinlikler
         </Text>
         <FlatList
-          data={etkinlikler}
+          data={populeretkinlikler}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
-            <Pressable onPress={() => navigation.navigate('EventDetail', {event: item})}>
-            <Image
-              source={{uri: `${item.resimler}`}}
-              style={{
-                width: 150,
-                height: 150,
-                marginRight: 20,
-                borderRadius: 10,
-              }}
-            />
+            <Pressable
+              onPress={() => navigation.navigate('EventDetail', {event: item})}>
+              <Image
+                source={{uri: `${item.resimler}`}}
+                style={{
+                  width: 150,
+                  height: 150,
+                  marginRight: 20,
+                  borderRadius: 10,
+                }}
+              />
             </Pressable>
           )}
         />

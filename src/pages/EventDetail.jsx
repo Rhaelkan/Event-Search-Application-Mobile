@@ -10,7 +10,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import CommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {konserdetayresimleri} from '../../data';
+import {etkinlikdetayresimleri} from '../../data';
 
 export default function EventDetail({navigation, route}) {
   const {event} = route.params;
@@ -50,7 +50,7 @@ export default function EventDetail({navigation, route}) {
             {event.isim}
           </Text>
           <FlatList
-            data={konserdetayresimleri}
+            data={etkinlikdetayresimleri}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
