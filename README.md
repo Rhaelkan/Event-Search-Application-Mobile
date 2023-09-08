@@ -14,7 +14,7 @@ Eventify offers users the following features:
 - Category: Each event has a category, so users can focus on a specific category.
 - Image gallery: On the event detail page, pictures of the event are displayed with a slider.
 - Search: The app can be searched by event name, type, venue and city.
-- Venue-specific events: When you click on the name of a venue or city at Event Detail page, all events taking place at that venue or city are listed.
+- Venue-specific events: When you click on the name of a venue or city on Event Detail page, all events taking place at that venue or city are listed.
 - Popular events slide: There is a slide with popular events on the homepage.
 - Pricing: Some events are free of charge, while others may require a ticket. For ticketed events, different ticket fees may apply according to ticket categories.
 - Social media sharing: On the event detail page, you can share the event on popular social media platforms.
