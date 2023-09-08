@@ -13,7 +13,7 @@ import React, {useState} from 'react';
 import etkinlikler from './data';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import EventCard from './src/components/EventCard';
-import {populeretkinlikler} from './data';
+import {populerEtkinliklerListesi} from './data';
 
 const App = ({navigation}) => {
   const [searchText, setSearchText] = useState('');
@@ -64,7 +64,7 @@ const App = ({navigation}) => {
           Popüler Etkinlikler
         </Text>
         <FlatList
-          data={populeretkinlikler}
+          data={populerEtkinliklerListesi}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (

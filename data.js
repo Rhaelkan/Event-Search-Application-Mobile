@@ -53,6 +53,7 @@ export const etkinlikdetayresimleri = [
   'https://img.freepik.com/free-photo/side-view-woman-reading-about-painting_23-2149911897.jpg?w=1380&t=st=1694034413~exp=1694035013~hmac=2aaaa904657bb23d839e457a728c48fe5f4d81e585a1beb05bbc353b7babdf2e'
 ];
 
+
 export const populeretkinlikler = [
   {
     id: 8,
@@ -1441,3 +1442,14 @@ const etkinlikler = [
 ];
 
 export default etkinlikler;
+
+
+export const populerEtkinliklerListesi = [];
+
+while (populerEtkinliklerListesi.length < 6 && etkinlikler.length > 0) {
+  const randomIndex = Math.floor(Math.random() * etkinlikler.length);
+  const randomEtkinlik = etkinlikler[randomIndex];
+  
+  populerEtkinliklerListesi.push(randomEtkinlik);
+  etkinlikler.splice(randomIndex, 1);
+}
