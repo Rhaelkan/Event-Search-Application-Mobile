@@ -40,16 +40,16 @@ I hope you like it. 🎉
 ## ScreenShots
 
 #### Home Screen:
-![Eventify Logo](assets/images/ss1.png)
+<img src="assets/images/ss1.png" width="300px" height="600px"/>
 
 
 #### Filtered Category on Search Bar:
-![Eventify Logo](assets/images/ss2.png)
+<img src="assets/images/ss2.png" width="300px" height="600px"/>
 
 
 #### Event Detail Screen:
-![Eventify Logo](assets/images/ss3.png)
+<img src="assets/images/ss3.png" width="300px" height="600px"/>
 
 
 #### Filtered City Events Screen:
-![Eventify Logo](assets/images/ss4.png)
+<img src="assets/images/ss4.png" width="300px" height="600px"/>
